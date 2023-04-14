@@ -1,0 +1,222 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+  @font-face {
+    font-family: 'Rocher';
+    src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+  }
+  
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: radial-gradient(circle at left top, #0a25f0 , #01b2fe)
+    
+}
+.title{
+    overflow: auto;
+    padding-top: 30px;
+}
+
+.heading{
+position: relative;
+padding-left: 680px;
+padding-right: 10px;
+padding-top: 30px;
+font-size: 100px;
+color: #fff;
+}
+
+.logo{
+    margin-left: 500px;
+    float:left;
+    width:150px;
+}
+
+
+
+.timeline{
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+
+}
+.container{
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    box-shadow: black;
+    animation: movedown 1s linear forwards;
+    opacity:0;
+}
+@keyframes movedown{
+    0%{
+        opacity:1;
+        transform:translateY(-30px);
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0px);
+    }
+}
+
+.container:nth-child(1){
+    animation-delay: 0s;
+}
+.container:nth-child(2){
+    animation-delay: 1s;
+}
+.container:nth-child(3){
+    animation-delay: 2s;
+}
+.container:nth-child(4){
+    animation-delay: 3s;
+}
+.container:nth-child(5){
+    animation-delay: 4s;
+}
+.container:nth-child(6){
+    animation-delay: 5s;
+}
+.container:nth-child(7){
+    animation-delay: 6s;
+}
+.text-box{
+    padding: 20px 30px;
+    background: #fff;
+    position: relative;
+    border-radius: 10px;
+    font-size: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.text-box:hover{
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    top: -4px;
+    border: 1px solid #cccccc;
+    background-color: white;
+}
+.text-box:hover:before {
+    transform: scale(2.15);
+  }
+.left-container{
+    left:0;
+    
+}
+
+.right-container{
+    left:50%;
+}
+
+.timeline::after{
+content:'';
+position: absolute;
+width: 6px;
+height: 100%;
+background:#fff;
+top:0;
+left:50%;
+margin-left: -3px;
+z-index: -1;
+animation: moveline 6s linear forwards;
+}
+
+@keyframes moveline {
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 100%;
+    }
+    
+}
+
+.text-box h2{
+    font-weight: 600;
+}
+
+.text-box small{
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.left-container-arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #fff;
+    right:-15px;
+
+}
+
+.right-container-arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #fff;
+    left:-15px;
+
+}
+
+@media screen and (max-width: 600px){
+.title{
+    width: 100%;
+    overflow-x: hidden;
+}
+.heading{
+        position: inherit;
+        padding-left: 20px;
+        font-size: 40px;
+        padding-top: 1%;
+    }
+
+    .logo{
+        position: relative;
+        right:490px;
+        width: 80px;
+    }
+    .timeline{
+        margin:10px auto;
+    }
+    
+    .timeline::after{
+        left:31px;
+    }
+
+    .container{
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 25px;
+    }
+
+    .text-box{
+        font-size:18px;
+    }
+    .text-box small{
+        margin-bottom: 10px;
+    }
+
+    .right-container{
+        left: 0;
+    }
+
+    .left-container-arrow,.right-container-arrow{
+        border-right:15px solid #fff ;
+        border-left: 0;
+        left:-15px;
+    }
+
+}
